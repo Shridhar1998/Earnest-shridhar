@@ -1,0 +1,1678 @@
+
+{
+    "search": [
+        {
+            "use_case": "Search Gift card by gift card name",
+            "payload": {
+"context": {
+                  "domain": "FIS10",
+                  "location": {
+                    "city": {
+                      "name": "std::080"
+                    },
+                    "country": {
+                      "code": "IND"
+                    }
+                  },
+                  "action": "search",
+                  "version": "1.0.0",
+                  "bap_id": "buyerapp.com",
+                  "bap_uri": "https://buyerapp.com/ondc",
+                  "transaction_id": "c837e6a5-7d6f-493b-a5bf-482cbc9c8767",
+                  "message_id": "2766391254372",
+                  "timestamp": "2023-03-10T10:00:00.402Z",
+                  "ttl": "PT30S"
+                },
+                "message": {
+                  "intent": {
+                    "item": {
+                      "descriptor": {
+                        "name": "free text to search item"
+                      }
+                    }
+                  },
+                  "tags": [
+                    {
+                      "display": false,
+                      "descriptor": {
+                        "code": "BUYER_FINDER_FEES"
+                      },
+                      "list": [
+                        {
+                          "descriptor": {
+                            "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                          },
+                          "value": "3"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            
+            
+        }    
+    ],
+    "on_search": [
+        {
+            "use_case": "On Search",
+            "payload": {
+                "context": {
+                    "domain": "FIS10",
+                    "location": {
+                      "city": {
+                        "name": "std::080"
+                      },
+                      "country": {
+                        "code": "IND"
+                      }
+                    },
+                    "action": "on_search",
+                    "version": "1.0.0",
+                    "bap_id": "buyerapp.com",
+                    "bap_uri": "https://buyerapp.com/ondc",
+                    "bpp_id": "sellerapp.com",
+                    "bpp_uri": "https://sellerapp.com/ondc",
+                    "transaction_id": "c837e6a5-7d6f-493b-a5bf-482cbc9c8767",
+                    "message_id": "2766391254372",
+                    "timestamp": "2023-03-10T10:00:00.402Z",
+                    "ttl": "PT30S"
+                  },
+                  "message": {
+                    "catalog": {
+                      "fulfillments": [
+                        {
+                          "id": "F1",
+                          "type": "ONLINE_EMAIL_SMS"
+                        }
+                      ],
+                      "descriptor": {
+                        "name": "Gift card store",
+                        "symbol": "https://giftcard.com/images/1-image",
+                        "short_desc": "Online Gift Card Store",
+                        "long_desc": "Online Gift Card Store",
+                        "images": [
+                          "https://giftcard.com/images/store-image"
+                        ]
+                      },
+                      "providers": [
+                        {
+                          "id": "P1",
+                          "ttl": "P1D",
+                          "time": {
+                            "label": "enable",
+                            "timestamp": "2023-03-10T10:00:30.000Z"
+                          },
+                          "descriptor": {
+                            "name": "Gift card store",
+                            "symbol": "https://giftcard.com/images/1-image",
+                            "short_desc": "Online Gift Card Store",
+                            "long_desc": "Online Gift Card Store",
+                            "images": [
+                              "https://giftcard.com/images/store-image"
+                            ]
+                          },
+                          "categories": [
+                            {
+                              "id": "C1",
+                              "descriptor": {
+                                "code": "ONLINE"
+                              }
+                            }
+                          ],
+                          "items": [
+                            {
+                              "id": "GC1",
+                              "descriptor": {
+                                "name": "Birthday Gift Card",
+                                "symbol": "https://giftcard.com/images/01.png",
+                                "short_desc": "Birthday Gift Card",
+                                "long_desc": "Birthday Gift Card",
+                                "images": [
+                                  "https://giftcard.com/images/02.png"
+                                ]
+                              },
+                              "price": {
+                                "currency": "INR",
+                                "minimum_value": "1000",
+                                "maximum_value": "10000"
+                              },
+                              "tags": 
+                              [
+                                {
+                                "descriptor": {
+                                  "code": "BRAND_DETAILS"
+                                },
+                                "list": 
+                                [
+                                  {
+                                    "descriptor": {
+                                      "code": "BRAND_NAME"
+                                    },
+                                    "value": "name of brand free text"
+                                  }
+                                ]
+                              }
+                              ],
+                              "category_ids": 
+                              [
+                                "C1"
+                              ],
+                              "fulfillment_ids": 
+                              [
+                                "F1"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+              }
+            
+        }
+    ],
+    "select":[
+        {
+            "use_case":"Select the gift card",
+            "payload":{
+                "context": {
+                    "domain": "FIS10",
+                    "location": {
+                      "city": {
+                        "name": "std::080"
+                      },
+                      "country": {
+                        "code": "IND"
+                      }
+                    },
+                    "action": "select",
+                    "version": "1.0.0",
+                    "bap_id": "buyerapp.com",
+                    "bap_uri": "https://buyerapp.com/ondc",
+                    "bpp_id": "sellerapp.com",
+                    "bpp_uri": "https://sellerapp.com/ondc",
+                    "transaction_id": "c837e6a5-7d6f-493b-a5bf-482cbc9c8767",
+                    "message_id": "2766391254372",
+                    "timestamp": "2023-03-10T10:00:00.402Z",
+                    "ttl": "PT30S"
+                  },
+                  "message": {
+                    "order": {
+                      "fulfillments": [
+                        {
+                          "id": "F1",
+                          "type": "ONLINE_EMAIL_SMS"
+                        }
+                      ],
+                      "provider": {
+                        "id": "P1"
+                      },
+                      "items": [
+                        {
+                          "id": "GC1",
+                          "quantity": {
+                            "selected": {
+                              "count": "1"
+                            }
+                          },
+                          "price": {
+                            "currency": "INR",
+                            "value": "1000"
+                          },
+                          "category_ids": [
+                            "C1"
+                          ],
+                          "fulfillment_ids": [
+                            "F1"
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                
+            }
+        }
+    ],
+    "on_select":[
+        {
+            "use_case":"Get more details of the selected gift card",
+            "payload":{
+                "context": {
+                    "domain": "FIS10",
+                    "location": {
+                      "city": {
+                        "name": "std::080"
+                      },
+                      "country": {
+                        "code": "IND"
+                      }
+                    },
+                    "action": "on_select",
+                    "version": "1.0.0",
+                    "bap_id": "buyerapp.com",
+                    "bap_uri": "https://buyerapp.com/ondc",
+                    "bpp_id": "sellerapp.com",
+                    "bpp_uri": "https://sellerapp.com/ondc",
+                    "transaction_id": "c837e6a5-7d6f-493b-a5bf-482cbc9c8767",
+                    "message_id": "2766391254372",
+                    "timestamp": "2023-03-10T10:00:00.402Z",
+                    "ttl": "PT30S"
+                  },
+                  "message": {
+                    "order": {
+                      "fulfillments": [
+                        {
+                          "id": "F1",
+                          "type": "ONLINE_EMAIL_SMS"
+                        }
+                      ],
+                      "provider": {
+                        "id": "P1",
+                        "ttl": "P1D",
+                        "descriptor": {
+                          "name": "Gift card store",
+                          "symbol": "https://giftcard.com/images/1-image",
+                          "short_desc": "Online Gift Card Store",
+                          "long_desc": "Online Gift Card Store",
+                          "images": [
+                            "https://giftcard.com/images/store-image"
+                          ]
+                        },
+                        "categories": 
+                        [
+                          {
+                            "id": "C1",
+                            "descriptor": {
+                              "code": "ONLINE"
+                            }
+                          }
+                        ]
+                      },
+                      "items": 
+                      [
+                        {
+                          "id": "GC1",
+                          "descriptor": 
+                          {
+                            "name": "Birthday Gift Card",
+                            "symbol": "https://giftcard.com/images/01.png",
+                            "short_desc": "Birthday Gift Card",
+                            "long_desc": "Birthday Gift Card",
+                            "images": [
+                              "https://giftcard.com/images/02.png"
+                            ]
+                          },
+                          "price": 
+                          {
+                            "currency": "INR",
+                            "minimum_value": "1000",
+                            "maximum_value": "10000"
+                          },
+                          "category_ids": [
+                            "C1"
+                          ],
+                          "fulfillment_ids": [
+                            "F1"
+                          ],
+                          "tags": [
+                            {
+                              "descriptor": {
+                                "code": "ITEM_DETAILS"
+                              },
+                              "list": [
+                                {
+                                  "descriptor": {
+                                    "code": "OCCASION"
+                                  },
+                                  "value": "BIRTHDAY"
+                                },
+                                {
+                                  "descriptor": {
+                                    "code": "USABILITY"
+                                  },
+                                  "value": "ONLINE"
+                                },
+                                {
+                                  "descriptor": {
+                                    "code": "EXPIRY_PERIOD"
+                                  },
+                                  "value": "P1Y"
+                                },
+                                {
+                                  "descriptor": {
+                                    "code": "USAGE_TERMS_CONDITION"
+                                  },
+                                  "value": "https://giftcard.com/giftcards/tncs"
+                                }
+                              ]
+                            },
+                            {
+                              "descriptor": {
+                                "code": "CUSTOMIZATION"
+                              },
+                              "list": [
+                                {
+                                  "descriptor": {
+                                    "code": "Enabled"
+                                  },
+                                  "value": "true"
+                                },
+                                {
+                                  "descriptor": 
+                                  {
+                                    "code": "RECEIVER_NAME"
+                                  }
+                                },
+                                {
+                                  "descriptor":
+                                  {
+                                    "code": "MESSAGE"
+                                  }
+                                },
+                                {
+                                  "descriptor": 
+                                  {
+                                    "code": "CUSTOM_AMOUNT"
+                                  }
+                                },
+                                {
+                                  "descriptor": 
+                                  {
+                                    "code": "Value"
+                                  }
+                                },
+                                {
+                                "descriptor": {
+                                  "code": "BRAND_DETAILS"
+                                },
+                                "list": 
+                                [
+                                  {
+                                    "descriptor": {
+                                      "code": "BRAND_NAME"
+                                    },
+                                    "value": "name of brand free text"
+                                  },
+                                  {
+                                    "descriptor": {
+                                      "code": "BRAND_PHONE"
+                                    },
+                                    "value": "+91-9900112299"
+                                  },
+                                  {
+                                    "descriptor": {
+                                      "code": "BRAND_EMAIL"
+                                    },
+                                    "value": "contact@giftcard.com"
+                                  }
+                                ]
+                              },
+                              {
+                                  "descriptor": {
+                                    "code": "DENOMINATION"
+                                  },
+                                  "list": 
+                                  [
+                                    {
+                                      "value": "1000"
+                                    },
+                                    {
+                                      "value": "2000"
+                                    },
+                                    {
+                                      "value": "5000"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "quotes": {
+                        "breakup": [
+                          {
+                            "item": {
+                              "id": "GC1"
+                            },
+                            "title": "item",
+                            "price": {
+                              "currency": "INR",
+                              "value": "1300"
+                            }
+                          },
+                          {
+                            "item": {
+                              "id": "GC1"
+                            },
+                            "title": "tax",
+                            "price": {
+                              "currency": "INR",
+                              "value": "100"
+                            }
+                          },
+                          {
+                            "item": {
+                              "id": "GC1"
+                            },
+                            "title": "convenience fee",
+                            "price": {
+                              "currency": "INR",
+                              "value": "100"
+                            }
+                          }
+                        ],
+                        "ttl": "P1D"
+                      }
+                    }
+                  }
+                
+            }
+        }
+    ],
+    "init":[
+        {
+            "use_case":"Initialize the checkout journey",
+            "payload":{
+                "context": {
+                    "domain": "FIS10",
+                    "location": {
+                      "city": {
+                        "name": "std::080"
+                      },
+                      "country": {
+                        "code": "IND"
+                      }
+                    },
+                    "action": "init",
+                    "version": "1.0.0",
+                    "bap_id": "buyerapp.com",
+                    "bap_uri": "https://buyerapp.com/ondc",
+                    "bpp_id": "sellerapp.com",
+                    "bpp_uri": "https://sellerapp.com/ondc",
+                    "transaction_id": "c837e6a5-7d6f-493b-a5bf-482cbc9c8767",
+                    "message_id": "2766391254372",
+                    "timestamp": "2023-03-10T10:00:00.402Z",
+                    "ttl": "PT30S"
+                  },
+                  "message": {
+                    "order": {
+                      "fulfillments": [
+                        {
+                          "id": "F1",
+                          "type": "ONLINE_EMAIL_SMS",
+                          "customer": {
+                            "person": {
+                              "name": "Buyer Name"
+                            },
+                            "contact": {
+                              "phone": "9999888877",
+                              "email": "buyer@test.com" 
+                            },
+                            "stops": [
+                              {
+                                "id": "0",
+                                "contact": {
+                                  "phone": "9999888867",
+                                  "email": "reciever@test.com" 
+                                },
+                                "person": {
+                                  "name": "TEST Receiver"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "items": [
+                        {
+                          "id": "GC1",
+                          "quantity": {
+                            "selected": {
+                              "count": "1"
+                            }
+                          },
+                          "fulfillment_ids": [
+                            "F1"
+                          ],
+                          "tags": [
+                            {
+                              "descriptor": {
+                                "code": "CUSTOMIZATION"
+                              },
+                              "list": [
+                                {
+                                  "descriptor": {
+                                    "code": "RECEIVER_NAME"
+                                  },
+                                  "value": "Test Name"
+                                },
+                                {
+                                  "descriptor": {
+                                    "code": "MESSAGE"
+                                  },
+                                  "value": "Happy Birthday to you !!"
+                                },
+                            {
+                              "descriptor": {
+                                "code": "CUSTOM_AMOUNT"
+                              },
+                              "value": "2101"
+                            }
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "billing": {
+                        "name": "House #",
+                        "address": "B005 Aspire Heights",
+                        "city": {
+                          "name": "Bangalore",
+                          "code": "BAN"
+                        },
+                        "state": {
+                          "name": "Karnataka",
+                          "code": "KA"
+                        },
+                        "email": "test@test.com",
+                        "phone": "9999888877"
+                      }
+                    }
+                  }
+                
+            }
+        }
+    ],
+    "on_init":[
+        {
+            "use_case":"Confirming the billing details",
+            "payload":{
+                "context": {
+                    "domain": "FIS10",
+                    "location": {
+                      "city": {
+                        "name": "std::080"
+                      },
+                      "country": {
+                        "code": "IND"
+                      }
+                    },
+                    "action": "on_init",
+                    "version": "1.0.0",
+                    "bap_id": "buyerapp.com",
+                    "bap_uri": "https://buyerapp.com/ondc",
+                    "bpp_id": "sellerapp.com",
+                    "bpp_uri": "https://sellerapp.com/ondc",
+                    "transaction_id": "c837e6a5-7d6f-493b-a5bf-482cbc9c8767",
+                    "message_id": "2766391254372",
+                    "timestamp": "2023-03-10T10:00:00.402Z",
+                    "ttl": "PT30S"
+                  },
+                  "message": {
+                    "order": {
+                      "fulfillments": [
+                        {
+                          "id": "F1",
+                          "type": "ONLINE_EMAIL_SMS",
+                          "customer": {
+                            "person": {
+                              "name": "Buyer Name"
+                            },
+                            "contact": {
+                              "phone": "9999888877",
+                              "email": "test@test.com"
+                            },
+                      "stops": [
+                            {
+                              "id": "0",
+                              "contact": {
+                                "phone": "9999888867",
+                                "email": "reciever@test.com"
+                              },
+                              "person": {
+                                "name": "TEST Receiver"
+                              }
+                            }
+                          ]
+                          }
+                        }
+                      ],
+                      "items": [
+                        {
+                          "id": "GC1",
+                          "quantity": {
+                            "count": "1"
+                          },
+                          "fulfillment_ids": [
+                            "F1"
+                          ],
+                          "tags": [
+                            {
+                              "descriptor": {
+                                "code": "CUSTOMIZATION"
+                              },
+                              "list": [
+                                {
+                                  "descriptor": {
+                                    "code": "RECEIVER_NAME"
+                                  },
+                                  "value": "Test Name"
+                                },
+                                {
+                                  "descriptor": {
+                                    "code": "MESSAGE"
+                                  },
+                                  "value": "Happy Birthday to you !!"
+                                },
+                                {
+                                  "descriptor": {
+                                    "code": "CUSTOM_AMOUNT"
+                                  },
+                                  "value": "2101"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "billing": {
+                        "name": "House #",
+                        "address": "B005 Aspire Heights",
+                        "city": {
+                          "name": "Bangalore",
+                          "code": "BAN"
+                        },
+                        "state": {
+                          "name": "Karnataka",
+                          "code": "KA"
+                        },
+                        "email": "test@test.com",
+                        "phone": "9999888877"
+                      },
+                      "quote": {
+                        "id": "Q1",
+                        "price": {
+                          "currency": "INR",
+                          "value": "2200"
+                        }
+                      },
+                      "breakup": [
+                        {
+                          "item": {
+                            "id": "GC1"
+                          },
+                          "title": "item",
+                          "price": {
+                            "currency": "INR",
+                            "value": "2101"
+                          }
+                        },
+                        {
+                          "item": {
+                            "id": "GC1"
+                          },
+                          "title": "tax",
+                          "price": {
+                            "currency": "INR",
+                            "value": "50"
+                          }
+                        },
+                        {
+                          "item": {
+                            "id": "GC1"
+                          },
+                          "title": "convenience fee",
+                          "price": {
+                            "currency": "INR",
+                            "value": "49"
+                          }
+                        }
+                      ],
+                      "ttl": "P1D",
+                    "payments": {
+                      "type": "ON-ORDER",
+                      "collected_by": "BAP",
+                      "status": "IN-PROGRESS",
+                      "params": {
+                        "currency": "INR",
+                        "transaction_id": "12345",
+                        "amount": "1110"
+                      },
+                      "tags": [
+                        {
+                          "descriptor": {
+                            "code": "BUYER_FINDER_FEES"
+                          },
+                          "list": [
+                            {
+                              "descriptor": {
+                                "code": "BUYER_FINDER_FEES_TYPE"
+                              },
+                              "value": "PERCENTAGE"
+                            },
+                            {
+                              "descriptor": {
+                                "code": "BUYER_FINDER_FEES_VALUE"
+                              },
+                              "value": "3"
+                            },
+                            {
+                              "descriptor": {
+                                "code": "SETTLEMENT_DETAILS"
+                              },
+                              "list": [
+                                {
+                                  "descriptor": {
+                                    "code": "settlement_bank_account_no"
+                                  },
+                                  "value": "xxxxxxxxx"
+                                },
+                                {
+                                  "descriptor": {
+                                    "code": "upi_address"
+                                  },
+                                  "value": "test@oksbi"
+                                },
+                                {
+                                  "descriptor": {
+                                    "code": "beneficiary_name"
+                                  },
+                                  "value": "Buyer’s Name"
+                                },
+                                {
+                                  "descriptor": {
+                                    "code": "settlement_type"
+                                  },
+                                  "value": "upi"
+                                },
+                                {
+                                  "descriptor": {
+                                    "code": "bank_name"
+                                  },
+                                  "value": "ICICI Bank"
+                                },
+                                {
+                                  "descriptor": {
+                                    "code": "branch_name"
+                                  },
+                                  "value": "icici Indiranagar"
+                                },
+                                {
+                                  "descriptor": {
+                                    "code": "settlement_counterparty"
+                                  },
+                                  "value": "BPP"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "confirm":[
+        {
+            "use_case":"Confirm the payment recieved and pass order details to BPP",
+            "payload":{
+                "context": {
+                    "domain": "FIS10",
+                    "location": {
+                      "city": {
+                        "name": "std::080"
+                      },
+                      "country": {
+                        "code": "IND"
+                      }
+                    },
+                    "action": "confirm",
+                    "version": "1.0.0",
+                    "bap_id": "buyerapp.com",
+                    "bap_uri": "https://buyerapp.com/ondc",
+                    "bpp_id": "sellerapp.com",
+                    "bpp_uri": "https://sellerapp.com/ondc",
+                    "transaction_id": "c837e6a5-7d6f-493b-a5bf-482cbc9c8767",
+                    "message_id": "2766391254372",
+                    "timestamp": "2023-03-10T10:00:00.402Z",
+                    "ttl": "PT30S"
+                  },
+                  "message": {
+                    "order": {
+                      "fulfillments": [
+                        {
+                          "id": "F1",
+                          "type": "ONLINE_EMAIL_SMS",
+                          "stops": [
+                            {
+                              "id": "0",
+                              "contact": {
+                                "phone": "9999888867",
+                                "email": "reciever@test.com"
+                              },
+                              "person": {
+                                "name": "TEST Receiver"
+                              }
+                            }
+                          ]
+                        }
+                      ],
+                      "items": [
+                        {
+                          "id": "GC1",
+                          "quantity": {
+                            "count": "1"
+                          },
+                          "fulfillment_ids": [
+                            "F1"
+                          ],
+                          "tags": [
+                            {
+                              "descriptor": {
+                                "code": "CUSTOMIZATION"
+                              },
+                              "list": [
+                                {
+                                  "descriptor": {
+                                    "code": "RECEIVER_NAME"
+                                  },
+                                  "value": "Test Name"
+                                },
+                                {
+                                  "descriptor": {
+                                    "code": "MESSAGE"
+                                  },
+                                  "value": "Happy Birthday to you !!"
+                                },
+                                {
+                                  "descriptor": {
+                                    "code": "CUSTOM_AMOUNT"
+                                  },
+                                  "value": "2101"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "billing": {
+                        "name": "House #",
+                        "address": "B005 Aspire Heights",
+                        "city": {
+                          "name": "Bangalore",
+                          "code": "BAN"
+                        },
+                        "state": {
+                          "name": "Karnataka",
+                          "code": "KA"
+                        },
+                        "email": "test@test.com",
+                        "phone": "9999888877"
+                      },
+                      "quote": {
+                        "id": "Q1",
+                        "price": {
+                          "currency": "INR",
+                          "value": "2200"
+                        }
+                      },
+                      "breakup": [
+                        {
+                          "item": {
+                            "id": "GC1"
+                          },
+                          "title": "item",
+                          "price": {
+                            "currency": "INR",
+                            "value": "2101"
+                          }
+                        },
+                        {
+                          "item": {
+                            "id": "GC1"
+                          },
+                          "title": "tax",
+                          "price": {
+                            "currency": "INR",
+                            "value": "50"
+                          }
+                        },
+                        {
+                          "item": {
+                            "id": "GC1"
+                          },
+                          "title": "convenience fee",
+                          "price": {
+                            "currency": "INR",
+                            "value": "49"
+                          }
+                        }
+                      ],
+                      "ttl": "P1D",
+                      "payments": [
+                        {
+                          "type": "ON-ORDER",
+                          "collected_by": "BAP",
+                          "status": "IN-PROGRESS",
+                          "params": {
+                            "currency": "INR",
+                            "transaction_id": "12345",
+                            "amount": "1110"
+                          },
+                          "tags": [
+                            {
+                              "descriptor": {
+                                "code": "BUYER_FINDER_FEES"
+                              },
+                              "list": [
+                                {
+                                  "descriptor": {
+                                    "code": "BUYER_FINDER_FEES_TYPE"
+                                  },
+                                  "value": "PERCENTAGE"
+                                },
+                                {
+                                  "descriptor": {
+                                    "code": "BUYER_FINDER_FEES_VALUE"
+                                  },
+                                  "value": "3"
+                                },
+                                {
+                                  "descriptor": {
+                                    "code": "SETTLEMENT_DETAILS"
+                                  },
+                                  "list": [
+                                    {
+                                      "descriptor": {
+                                        "code": "settlement_bank_account_no"
+                                      },
+                                      "value": "xxxxxxxxx"
+                                    },
+                                    {
+                                      "descriptor": {
+                                        "code": "upi_address"
+                                      },
+                                      "value": "test@oksbi"
+                                    },
+                                    {
+                                      "descriptor": {
+                                        "code": "beneficiary_name"
+                                      },
+                                      "value": "Buyer’s Name"
+                                    },
+                                    {
+                                      "descriptor": {
+                                        "code": "settlement_type"
+                                      },
+                                      "value": "upi"
+                                    },
+                                    {
+                                      "descriptor": {
+                                        "code": "bank_name"
+                                      },
+                                      "value": "ICICI Bank"
+                                    },
+                                    {
+                                      "descriptor": {
+                                        "code": "branch_name"
+                                      },
+                                      "value": "icici Indiranagar"
+                                    },
+                                    {
+                                      "descriptor": {
+                                        "code": "settlement_counterparty"
+                                      },
+                                      "value": "BPP"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "created_at": "2023-03-10T10:02:18.492Z",
+                      "updated_at": "2023-03-10T10:02:18.492Z"
+                    }
+                  }
+                
+            }
+
+        }
+    ],
+    "on_confirm":[
+        {
+            "use_case":"BPP confirms the order",
+            "payload" :{
+                "context": {
+                    "domain": "FIS10",
+                    "location": {
+                      "city": {
+                        "name": "std::080"
+                      },
+                      "country": {
+                        "code": "IND"
+                      }
+                    },
+                    "action": "on_confirm",
+                    "version": "1.0.0",
+                    "bap_id": "buyerapp.com",
+                    "bap_uri": "https://buyerapp.com/ondc",
+                    "bpp_id": "sellerapp.com",
+                    "bpp_uri": "https://sellerapp.com/ondc",
+                    "transaction_id": "c837e6a5-7d6f-493b-a5bf-482cbc9c8767",
+                    "message_id": "2766391254372",
+                    "timestamp": "2023-03-10T10:02:20.229Z",
+                    "ttl": "PT30S"
+                  },
+                  "message": {
+                    "order": {
+                      "id": "O1",
+                      "state": "ACCEPTED",
+                      "fulfillments": 
+                      [
+                        {
+                          "id": "F1",
+                          "type": "ONLINE_EMAIL_SMS",
+                          "stops": [
+                            {
+                              "id": "0",
+                              "contact": {
+                                "phone": "9999888867",
+                                "email": "reciever@test.com"
+                              },
+                              "person": {
+                                "name": "TEST Receiver"
+                              }
+                            }
+                          ]
+                        }
+                      ],
+                      "items": [
+                        {
+                          "id": "GC1",
+                          "quantity": {
+                            "count": "1"
+                          },
+                          "fulfillment_ids": [
+                            "F1"
+                          ],
+                          "tags": [
+                            {
+                              "descriptor": {
+                                "code": "CUSTOMIZATION"
+                              },
+                              "list": [
+                                {
+                                  "descriptor": {
+                                    "code": "RECEIVER_NAME"
+                                  },
+                                  "value": "Test Name"
+                                },
+                                {
+                                  "descriptor": {
+                                    "code": "MESSAGE"
+                                  },
+                                  "value": "Happy Birthday to you !!"
+                                },
+                                {
+                                  "descriptor": {
+                                    "code": "CUSTOM_AMOUNT"
+                                  },
+                                  "value": "2101"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "billing": {
+                        "name": "House #",
+                        "address": "B005 Aspire Heights",
+                        "city": {
+                          "name": "Bangalore",
+                          "code": "BAN"
+                        },
+                        "state": {
+                          "name": "Karnataka",
+                          "code": "KA"
+                        },
+                        "email": "test@test.com",
+                        "phone": "9999888877"
+                      },
+                      "quote": {
+                        "id": "Q1",
+                        "price": {
+                          "currency": "INR",
+                          "value": "2200"
+                        }
+                      },
+                      "breakup": [
+                        {
+                          "item": {
+                            "id": "GC1"
+                          },
+                          "title": "item",
+                          "price": {
+                            "currency": "INR",
+                            "value": "2101"
+                          }
+                        },
+                        {
+                          "item": {
+                            "id": "GC1"
+                          },
+                          "title": "tax",
+                          "price": {
+                            "currency": "INR",
+                            "value": "50"
+                          }
+                        },
+                        {
+                          "item": {
+                            "id": "GC1"
+                          },
+                          "title": "convenience fee",
+                          "price": {
+                            "currency": "INR",
+                            "value": "49"
+                          }
+                        }
+                      ],
+                      "ttl": "P1D",
+                      "payments": [
+                        {
+                          "type": "ON-ORDER",
+                          "collected_by": "BAP",
+                          "status": "CONFIRMED",
+                          "params": {
+                            "currency": "INR",
+                            "transaction_id": "12345",
+                            "amount": "1110"
+                          },
+                          "tags": [
+                            {
+                              "descriptor": {
+                                "code": "BUYER_FINDER_FEES"
+                              },
+                              "list": [
+                                {
+                                  "descriptor": {
+                                    "code": "BUYER_FINDER_FEES"
+                                  },
+                                  "value": "PERCENTAGE"
+                                },
+                                {
+                                  "descriptor": {
+                                    "code": "BUYER_FINDER_FEES_Value"
+                                  },
+                                  "value": "3"
+                                },
+                                {
+                                  "descriptor": {
+                                    "code": "SETTLEMENT_DETAILS"
+                                  },
+                                  "list": [
+                                    {
+                                      "descriptor": {
+                                        "code": "settlement_bank_account_no"
+                                      },
+                                      "value": "xxxxxxxxx"
+                                    },
+                                    {
+                                      "descriptor": {
+                                        "code": "upi_address"
+                                      },
+                                      "value": "test@oksbi"
+                                    },
+                                    {
+                                      "descriptor": {
+                                        "code": "beneficiary_name"
+                                      },
+                                      "value": "Buyer’s Name"
+                                    },
+                                    {
+                                      "descriptor": {
+                                        "code": "settlement_type"
+                                      },
+                                      "value": "upi"
+                                    },
+                                    {
+                                      "descriptor": {
+                                        "code": "bank_name"
+                                      },
+                                      "value": "ICICI Bank"
+                                    },
+                                    {
+                                      "descriptor": {
+                                        "code": "branch_name"
+                                      },
+                                      "value": "icici Indiranagar"
+                                    },
+                                    {
+                                      "descriptor": {
+                                        "code": "settlement_counterparty"
+                                      },
+                                      "value": "BPP"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "created_at": "2023-03-10T10:02:18.492Z",
+                      "updated_at": "2023-03-10T10:02:20.229Z"
+                    }
+                  }                
+            }
+        }
+    ],
+    "status":[
+        {
+            "use_case":"Get the status of order",
+            "payload" :{
+                "context": {
+                    "domain": "FIS10",
+                    "location": {
+                      "city": {
+                        "name": "std::080"
+                      },
+                      "country": {
+                        "code": "IND"
+                      }
+                    },
+                    "action": "status",
+                    "version": "1.0.0",
+                    "bap_id": "buyerapp.com",
+                    "bap_uri": "https://buyerapp.com/ondc",
+                    "bpp_id": "sellerapp.com",
+                    "bpp_uri": "https://sellerapp.com/ondc",
+                    "transaction_id": "c837e6a5-7d6f-493b-a5bf-482cbc9c8767",
+                    "message_id": "2766391254372",
+                    "timestamp": "2023-03-10T10:00:00.402Z",
+                    "ttl": "PT30S"
+                  },
+                  "message": {
+                    "id": "O1"
+                  }                
+            }
+        }
+    ],
+    "on_status":[
+        {
+            "use_case":"Get the updates on order status",
+            "payload":{
+                "context": {
+                    "domain": "FIS10",
+                    "location": {
+                      "city": {
+                        "name": "std::080"
+                      },
+                      "country": {
+                        "code": "IND"
+                      }
+                    },
+                    "action": "on_confirm",
+                    "version": "1.0.0",
+                    "bap_id": "buyerapp.com",
+                    "bap_uri": "https://buyerapp.com/ondc",
+                    "bpp_id": "sellerapp.com",
+                    "bpp_uri": "https://sellerapp.com/ondc",
+                    "transaction_id": "c837e6a5-7d6f-493b-a5bf-482cbc9c8767",
+                    "message_id": "2766391254372",
+                    "timestamp": "2023-03-10T10:05:21.631Z",
+                    "ttl": "PT30S"
+                  },
+                  "message": {
+                    "order": {
+                       "id": "O1",
+                   "state": "PROCESSING",
+                      "fulfillments": [
+                        {
+                          "id": "F1",
+                          "type": "ONLINE_EMAIL_SMS",
+                          "stops": [
+                            {
+                              "id": "0",
+                              "contact": {
+                                "phone": "9999888867",
+                                "email": "reciever@test.com"
+                              },
+                              "person": {
+                                "name": "TEST Receiver"
+                              }
+                            }
+                          ]
+                        }
+                      ],
+                      "items": [
+                        {
+                          "id": "GC1",
+                          "quantity": {
+                            "count": "1"
+                          },
+                          "fulfillment_ids": [
+                            "F1"
+                          ],
+                          "tags": [
+                            {
+                              "descriptor": {
+                                "code": "CUSTOMIZATION"
+                              },
+                              "list": [
+                                {
+                                  "descriptor": {
+                                    "code": "RECEIVER_NAME"
+                                  },
+                                  "value": "Test Name"
+                                },
+                                {
+                                  "descriptor": {
+                                    "code": "MESSAGE"
+                                  },
+                                  "value": "Happy Birthday to you !!"
+                                },
+                                {
+                                  "descriptor": {
+                                    "code": "CUSTOM_AMOUNT"
+                                  },
+                                  "value": "2101"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "billing": {
+                        "name": "House #",
+                        "address": "B005 Aspire Heights",
+                        "city": {
+                          "name": "Bangalore",
+                          "code": "BAN"
+                        },
+                        "state": {
+                          "name": "Karnataka",
+                          "code": "KA"
+                        },
+                        "email": "test@test.com",
+                        "phone": "9999888877"
+                      },
+                      "quote": {
+                        "id": "Q1",
+                        "price": {
+                          "currency": "INR",
+                          "value": "2200"
+                        }
+                      },
+                      "breakup": [
+                        {
+                          "item": {
+                            "id": "GC1"
+                          },
+                          "title": "item",
+                          "price": {
+                            "currency": "INR",
+                            "value": "2101"
+                          }
+                        },
+                        {
+                          "item": {
+                            "id": "GC1"
+                          },
+                          "title": "tax",
+                          "price": {
+                            "currency": "INR",
+                            "value": "50"
+                          }
+                        },
+                        {
+                          "item": {
+                            "id": "GC1"
+                          },
+                          "title": "convenience fee",
+                          "price": {
+                            "currency": "INR",
+                            "value": "49"
+                          }
+                        }
+                      ],
+                      "ttl": "P1D",
+                      "payments": [
+                        {
+                          "type": "ON-ORDER",
+                          "collected_by": "BAP",
+                          "status": "CONFIRMED",
+                          "params": {
+                            "currency": "INR",
+                            "transaction_id": "12345",
+                            "amount": "1110"
+                          },
+                          "tags": [
+                            {
+                              "descriptor": {
+                                "code": "BUYER_FINDER_FEES"
+                              },
+                              "list": [
+                                {
+                                  "descriptor": {
+                                    "code": "BUYER_FINDER_FEES"
+                                  },
+                                  "value": "PERCENTAGE"
+                                },
+                                {
+                                  "descriptor": {
+                                    "code": "BUYER_FINDER_FEES_Value"
+                                  },
+                                  "value": "3"
+                                },
+                                {
+                                  "descriptor": {
+                                    "code": "SETTLEMENT_DETAILS"
+                                  },
+                                  "list": [
+                                    {
+                                      "descriptor": {
+                                        "code": "settlement_bank_account_no"
+                                      },
+                                      "value": "xxxxxxxxx"
+                                    },
+                                    {
+                                      "descriptor": {
+                                        "code": "upi_address"
+                                      },
+                                      "value": "test@oksbi"
+                                    },
+                                    {
+                                      "descriptor": {
+                                        "code": "beneficiary_name"
+                                      },
+                                      "value": "Buyer’s Name"
+                                    },
+                                    {
+                                      "descriptor": {
+                                        "code": "settlement_type"
+                                      },
+                                      "value": "upi"
+                                    },
+                                    {
+                                      "descriptor": {
+                                        "code": "bank_name"
+                                      },
+                                      "value": "ICICI Bank"
+                                    },
+                                    {
+                                      "descriptor": {
+                                        "code": "branch_name"
+                                      },
+                                      "value": "icici Indiranagar"
+                                    },
+                                    {
+                                      "descriptor": {
+                                        "code": "settlement_counterparty"
+                                      },
+                                      "value": "BPP"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "created_at": "2023-03-10T10:02:18.492Z",
+                      "updated_at": "2023-03-10T10:05:21.631Z"
+                    }
+                  }
+                
+            }
+        }
+    ],
+    "on_cancel":[
+        {
+            "use_case":"Cancelling an order",
+            "payload":{
+                "context": {
+                    "domain": "FIS10",
+                    "location": {
+                      "city": {
+                        "name": "std::080"
+                      },
+                      "country": {
+                        "code": "IND"
+                      }
+                    },
+                    "action": "on_cancel",
+                    "version": "1.0.0",
+                    "bap_id": "buyerapp.com",
+                    "bap_uri": "https://buyerapp.com/ondc",
+                    "bpp_id": "sellerapp.com",
+                    "bpp_uri": "https://sellerapp.com/ondc",
+                    "transaction_id": "c837e6a5-7d6f-493b-a5bf-482cbc9c8767",
+                    "message_id": "2766391254372",
+                    "timestamp": "2023-03-10T10:00:00.402Z",
+                    "ttl": "PT30S"
+                  },
+                  "message": {
+                    "order": {
+                      "id": "O1",
+                      "state": "CANCELLED",
+                      "tags": [
+                        {
+                          "descriptor": {
+                            "code": "CANCELLATION_REASONS"
+                          },
+                          "lists": [
+                            {
+                              "descriptor": {
+                                "code": "011"
+                              },
+                              "value": "Ordered by mistake"
+                            },
+                            {
+                              "descriptor": {
+                                "code": "010"
+                              },
+                              "value": "Not needed anymore"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+        }
+    ],
+    "update":[
+        {
+            "use_case":"Updating the reciever information on order",
+            "payload":{
+                "context":
+                {
+                  "domain":"FIS10",
+                  "action":"update",
+                  "country":"IND",
+                  "city":"std:080",
+                  "core_version":"1.0.0",
+                  "bap_id":"buyerapp.com",
+                  "bap_uri":"https://buyerapp.com/ondc",
+                  "bpp_id":"sellerapp.com",
+                  "bpp_uri":"https://sellerapp.com/ondc",
+                  "transaction_id":"c837e6a5-7d6f-493b-a5bf-482cbc9c8767",
+                  "message_id":"2766391254378",
+                  "timestamp":"2023-03-10T14:31:01.591Z",
+                  "ttl": "PT30S"
+                },
+                "message":
+                {
+                    "update_target": "fulfillment_end",#enum
+                    "id":"O1",
+                    "state":"In-progress",
+                    "provider":
+                    {
+                      "id":"P1",
+                      "locations":
+                      [
+                        {
+                          "id":"L1"
+                        }
+                      ]
+                    },
+                    "items": [
+                      {
+                        "id":"I1",
+                        "quantity":
+                        {
+                          "count":1
+                        }        
+                      }
+                    ],
+                    "fulfillments": [
+                      {
+                         "stops": [
+                          {
+                            "id": "0",
+                            "contact": {
+                              "phone": "9999888867",
+                              "email": "reciever@test.com"
+                            },
+                            "person": {
+                              "name": "TEST Receiver"
+                            }
+                          }
+                        ],
+                       "tags": [
+                                          {
+                                            "descriptor": {
+                                              "code": "UPDATE_INFORMATION"
+                                            },
+                                            "list": [
+                                              {
+                                                "descriptor": {
+                                                  "code": "UPDATE_TYPE"
+                                                },
+                                                "value": "Retry"
+                                              },
+                                              {
+                                                "descriptor": {
+                                                  "code": "UPDATE_RECEIVER_INFO"
+                                                },
+                                                "value": "01"
+                                              }
+                                            ]
+                                          }
+                      ]
+              
+                      }
+                    ]
+                  }
+                }
+        }
+    ]
+}
